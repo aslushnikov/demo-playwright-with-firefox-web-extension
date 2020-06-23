@@ -7,6 +7,7 @@ See https://github.com/microsoft/playwright/issues/2644 for details.
 - We use playwright to connect to the browser with webextension.
 
 ```js
+const path = require('path');
 const {firefox} = require('playwright');
 const webExt = require('web-ext').default;
 

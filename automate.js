@@ -1,3 +1,4 @@
+const path = require('path');
 const {firefox} = require('playwright');
 const webExt = require('web-ext').default;
 
@@ -7,8 +8,8 @@ const webExt = require('web-ext').default;
   webExt.util.logger.consoleStream.startCapturing();
 
   // Launch firefox
-  const runner = await webExt.cmd.run({
-    sourceDir: __dirname,
+  await webExt.cmd.run({
+    sourceDir: path.join(__dirname, 'webextension'),
     firefox: firefox.executablePath(),
     args: [`-juggler=1234`],
   }, {
